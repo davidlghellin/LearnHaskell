@@ -1,0 +1,21 @@
+*Main> autor = ("david","lopez")
+
+*Main> fst autor 
+"david"
+
+*Main> snd autor 
+"lopez"
+
+-- para pegar
+:set +m
+
+
+nombres = [
+    ("david","lopez"),
+    ("cesar","lopez"),
+    ("ramon","perez")] 
+
+Prelude> import Data.List
+Prelude Data.List> sort nombres
+[("cesar","lopez"),("david","lopez"),("ramon","perez")]
+Prelude Data.List> 
