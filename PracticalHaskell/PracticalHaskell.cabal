@@ -19,6 +19,8 @@ library
   exposed-modules: Chapter2.Funs
                  , Chapter2.MyData
                  , Chapter2.SimpleFunctions
+                 , Chapter3.ParamPoly
+                 , Chapter3.MoreModules
   -- other-modules:
   -- other-extensions:
   build-depends:       base >=4.12 && <4.13
@@ -33,6 +35,8 @@ test-suite test
   other-modules:  Chapter2.TestFuns
                 , Chapter2.TestMyData
                 , Chapter2.TestSimpleFunctions
+                , Chapter3.TestParamPoly
+                , Chapter3.TestMoreModules
                 
   build-depends:  base
                 , tasty
