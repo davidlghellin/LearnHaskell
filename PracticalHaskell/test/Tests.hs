@@ -8,6 +8,7 @@ import Chapter2.TestMyData
 import Chapter2.TestSimpleFunctions
 import Chapter3.TestParamPoly
 import Chapter3.TestMoreModules
+import Chapter4.TestMyTypeClass
 
 misTest :: TestTree
 misTest = testGroup "Mis test totales" [ misTestFuns
@@ -15,6 +16,7 @@ misTest = testGroup "Mis test totales" [ misTestFuns
                                        , misTestSimpleFunctions
                                        , misPolysh
                                        , misPermu
+                                       , misTypeClass
                                        ]
 
 main = defaultMain misTest

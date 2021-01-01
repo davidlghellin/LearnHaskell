@@ -24,7 +24,9 @@ myFstSuite = testGroup "mis func poly"
 
 myClientPolySuite :: TestTree
 myClientPolySuite = testGroup "cliente poly"
-             [ testCase "Show Cliente char" $ show (GovOrg 'n' "EU") @?= "GovOrg {clientId = 'n', clienteName = \"EU\"}"
+             [ testCase "Show Persona"      $ show (Person "David" "Lopez")                @?= "Person {firstName = \"David\", lastName = \"Lopez\"}"
+             , testCase "Individual int"    $ show (Individual 1 (Person "David" "Lopez")) @?= "Individual {clientId = 1, person = Person {firstName = \"David\", lastName = \"Lopez\"}}"
+             , testCase "Show Cliente char" $ show (GovOrg 'n' "EU") @?= "GovOrg {clientId = 'n', clienteName = \"EU\"}"
              , testCase "Show Cliente int"  $ show (GovOrg 1 "EU")   @?= "GovOrg {clientId = 1, clienteName = \"EU\"}"
              ]
 
