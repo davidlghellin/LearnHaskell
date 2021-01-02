@@ -1,6 +1,7 @@
 module Chapter4.MyTypeClass where
 
 import Chapter3.ParamPoly
+--import Data.Map as M
 
 class Nameable n where
     name :: n -> String
@@ -144,6 +145,38 @@ instance Ord TGByPrice where
   (TGByPrice (TravelGuide t1 a1 p1)) <= (TGByPrice (TravelGuide t2 a2 p2)) =
      p1 < p2 || (p1 == p2 && (t1 < t2 || (t1 == t2 && a1 <= a2)))
 
---------------------
--- Monoidal cache --
---------------------
+-------------
+-- Functor --
+-------------
+
+modifyTravelGuidePrice :: Double -> [TravelGuide] -> [TravelGuide]
+modifyTravelGuidePrice m = map (\tg -> tg { price= m * price tg})
+
+--modifyTravelGuidePriceMap :: Double -> M.Map a TravelGuide -> M.Map a TravelGuide
+--modifyTravelGuidePriceMap m =M.map (\tg -> tg { price= m * price tg})
+
+modifyTravelGuidePrice' :: Functor f => Double -> f TravelGuide -> f TravelGuide
+modifyTravelGuidePrice' m = fmap (\tg -> tg { price = m * price tg})
+
+modifyTravelGuidePrice2' :: Functor f => Double -> f TravelGuide -> f TravelGuide
+modifyTravelGuidePrice2' m = (<$>) (\tg -> tg { price = m * price tg})
+
+-- tenemos una estructura recursiva como un arbol
+data Tree a = Leaf a 
+            | Branch (Tree a) (Tree a) 
+            deriving (Show)
+
+treeMap :: (a -> b) -> Tree a -> Tree b
+treeMap f (Leaf x)            = Leaf (f x)
+treeMap f (Branch left right) = Branch (treeMap f left) (treeMap f right)
+
+instance Functor Tree where
+    fmap f (Leaf x)            = Leaf   (f x)
+    fmap f (Branch left right) = Branch (fmap f left) (fmap f right)
+
+
+-- Otras --
+-----------
+steep :: Int -> Maybe Int
+steep a = Just (a + 1) 
+
