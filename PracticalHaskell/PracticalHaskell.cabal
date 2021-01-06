@@ -31,6 +31,8 @@ library
                  , Otro.Youtube.MonoidsInPractice03
                  , Otro.Youtube.MonoidHomomorphisms
                  , Otro.Youtube.MonoidalValidator
+                 
+                 , Otro.Web.FizzBuzzStream
   -- other-modules:
   -- other-extensions:
   build-depends:       base >=4.12 && <4.13, containers
