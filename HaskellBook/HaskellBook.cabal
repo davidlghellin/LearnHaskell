@@ -19,6 +19,7 @@ extra-source-files:  CHANGELOG.md
 
 library
   exposed-modules: Cap02.MyFunctions
+                 , Cap06.MyTypes
   -- other-modules:
   -- other-extensions:
   build-depends:       base >=4.12 && <4.13
@@ -30,6 +31,7 @@ test-suite test
   hs-source-dirs: test
 
   other-modules:  Cap02.MyFunctionsTest
+                , Cap06.MyTypesTest
 
   build-depends:  base
                 , tasty
