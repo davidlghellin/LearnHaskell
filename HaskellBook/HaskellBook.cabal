@@ -48,3 +48,17 @@ executable HaskellBook
 
     hs-source-dirs:   app
     default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test
+
+  other-modules:  Cap02.MyFunctionsTest
+
+  build-depends:  base
+                , tasty
+                , tasty-hunit
+                , HUnit
+                , HaskellBook
+  main-is:        Tests.hs
+  default-language: Haskell2010
