@@ -1,4 +1,4 @@
-# Revision history for PureFunctionalProgramingWithoutFearOrFrustration
+# Revision history for HaskellBook
 
 ## 0.1.0.0 -- YYYY-mm-dd
 
