@@ -23,7 +23,8 @@ extra-source-files: CHANGELOG.md
 
 library
     exposed-modules:  MyLib
-                     ,Cap02.MyFunctions
+                    , Cap02.MyFunctions
+                    , Cap06.MyTypes
 
     -- Modules included in this library but not exported.
     -- other-modules:
@@ -54,6 +55,7 @@ test-suite test
   hs-source-dirs: test
 
   other-modules:  Cap02.MyFunctionsTest
+                , Cap06.MyTypesTest
 
   build-depends:  base
                 , tasty
